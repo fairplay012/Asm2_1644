@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>All products</title>
+</head>
+<body style="background-color:bisque;">
+    <h1 style="font-size: 70px;text-align:center;">Admin Page</h1>
+   <form style="margin-right: 200px; margin-left: 600px;" method="POST" action="/search">
+        <input  type="text" name="txtName">
+        <input  type="submit" value="Search">
+   </form>
+   <table class="table table-hover">
+       <thead>
+           <tr>
+               <th style="border: 1px solid black;">Name</th>
+               <th style="border: 1px solid black;">Price</th>                            
+               <th style="border: 1px solid black;">Delete</th>
+           </tr>
+       </thead>
+       <tbody>
+           {{#each model}}
+           <tr>
+                <td style="border: 1px solid black;">{{name}}</td>
+                <td style="border: 1px solid black;">{{price}}</td>                               
+                <td style="border: 1px solid black;"><a href="/delete?id={{_id}}" onclick="return confirm('Are you sure')">Delete</a></td>
+            </tr>
+            {{/each}}
+       </tbody>      
+   </table>
+    <a style="font-size: 30px;margin-top: 150px; margin-bottom: 400px; margin-right: 200px; margin-left: 700px;" href="/">Go Home</a>
+</body>
+</html>

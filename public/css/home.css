@@ -1,0 +1,22 @@
+
+.container{
+    text-align: center;
+}
+ul li {
+    list-style: none;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    margin-top: 7%;
+}
+.new{
+    text-decoration: none;
+}
+.insert{
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-bottom: 300px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: lightblue;
+
+}
