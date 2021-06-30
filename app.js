@@ -11,14 +11,14 @@ const ObjectID = require('mongodb').ObjectID;
 
 var dsNotToDelete = ['ao','quan','bep','my goi'];
 
-const dbHandler = require('./databaseHandler')
+const dbHandler = require('./DatabaseHandler.js')
 
 
 //search chinh xac=> tim gan dung
 app.post('/search', async (req,res)=>{
     const searchText = req.body.txtName;
     const dbo = await dbHandler.GetDB();
-    let result = await dbo.collection("Products").find({name: new RegExp(searchText, 'i')}).toArray();
+    let result = await dbo.collection("Products").find({name = searchText}).toArray();
     console.log(result);
     res.render('allProduct',{model:result}) 
 
@@ -50,19 +50,21 @@ app.get('/delete',async (req,res)=>{
     }   
 })
 
-app.get('/view',async (req,res)=>{
+app.get('/view',async(req,res)=>{
     const dbo = await dbHandler.GetDB();
     const results =  await dbo.collection("Products").find().toArray();
     res.render('allProduct',{model:results})
 })
 
-app.post('/doInsert', async (req,res)=>{
+app.post('/doInsert', async(req,res)=>{
     let nameInput = req.body.txtName;
     let priceInput = req.body.txtPrice;
     let newProduct = {name:nameInput, price:priceInput, size : {dai:20, rong:40}};
     const dbo = await dbHandler.GetDB();
     await dbo.collection("Products").insertOne(newProduct);
     res.render('index');
+ 
+
 })
 app.get('/insert',(req,res)=>{
     res.render('insert')
