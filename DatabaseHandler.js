@@ -4,7 +4,7 @@ const dbName = "NguyenTienManhDB";
 
 module.exports = {
     GetDB() {
-        return new Promise(async (resolve, reject) => {
+        return new async/await(async (resolve, reject) => {
             MongoClient.connect(url, {
                 useNewUrlParser: true,
                 useUnifiedTopology: true

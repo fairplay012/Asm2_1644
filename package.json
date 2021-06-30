@@ -1,11 +1,11 @@
 {
   "name": "asm2_1644",
   "version": "1.0.0",
-  "description": "",
-  "main": "DatabaseHandler.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
     "hbs": "^4.1.2",
+    "init": "^0.1.2",
     "mongodb": "^3.6.9"
   },
   "devDependencies": {},
@@ -14,5 +14,14 @@
     "start": "node app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fairplay012/Asm2_1644.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fairplay012/Asm2_1644/issues"
+  },
+  "homepage": "https://github.com/fairplay012/Asm2_1644#readme",
+  "description": ""
 }
