@@ -18,7 +18,7 @@ const dbHandler = require('./DatabaseHandler.js')
 app.post('/search', async (req,res)=>{
     const searchText = req.body.txtName;
     const dbo = await dbHandler.GetDB();
-    let result = await dbo.collection("Products").find({name: searchText}).toArray();
+    let result = await dbo.collection("Products").find({name: new RegExp(searchText,'i')}).toArray();
     console.log(result);
     res.render('allProduct',{model:result}) 
 
